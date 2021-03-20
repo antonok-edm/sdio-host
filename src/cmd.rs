@@ -67,6 +67,12 @@ pub fn idle() -> Cmd<Rz> {
     cmd(0, 0)
 }
 
+/// CMD1: Ask all cards to send their supported OCR, or become inactive if they cannot be
+/// supported.
+pub fn send_op_cond(ocr: u32) -> Cmd<R3> {
+    cmd(1, ocr)
+}
+
 /// CMD2: Ask any card to send their CID
 pub fn all_send_cid() -> Cmd<R2> {
     cmd(2, 0)
